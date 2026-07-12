@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>₹30K–36K Phone Comparison — India, July 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EEF0E9;
+    --panel:#FBFAF6;
+    --ink:#181B16;
+    --ink-soft:#54594E;
+    --rule:#C7CBBC;
+    --amber:#D98E2B;
+    --amber-deep:#A8641A;
+    --teal:#2C6E68;
+    --teal-deep:#1B4844;
+    --tag-bg:#26302B;
+    --tag-ink:#EEF0E9;
+    --danger:#B4472F;
+    --win:#E4EFE2;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1320px;margin:0 auto;padding:0 28px;}
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:56px 0 34px;border-bottom:2px solid var(--ink);}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--teal-deep);
+    display:flex;align-items:center;gap:10px;margin-bottom:16px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--amber-deep);display:inline-block;}
+  h1.title{
+    font-family:'Big Shoulders Display',sans-serif;font-weight:800;
+    font-size:clamp(38px,6.4vw,80px);line-height:.94;margin:0 0 18px;letter-spacing:-.01em;
+  }
+  h1.title .num{color:var(--amber-deep);}
+  .dek{max-width:640px;font-size:16.5px;line-height:1.55;color:var(--ink-soft);}
+  .dek strong{color:var(--ink);}
+
+  .intro-note{
+    padding:20px 0 30px;display:flex;gap:12px;flex-wrap:wrap;
+    font-size:13px;color:var(--ink-soft);align-items:center;
+  }
+  .chip{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+    border:1px solid var(--rule);padding:5px 10px;color:var(--ink);
+  }
+
+  /* ---------- COMPARISON TABLE ---------- */
+  .table-scroll{
+    overflow-x:auto;
+    border:2px solid var(--ink);
+    margin-bottom:16px;
+  }
+  table.compare{
+    border-collapse:collapse;
+    width:100%;
+    min-width:980px;
+  }
+  table.compare thead th{
+    background:var(--ink);
+    color:var(--bg);
+    position:sticky;top:0;
+    padding:18px 20px 16px;
+    text-align:left;
+    vertical-align:top;
+    border-right:1px solid #3a4038;
+  }
+  table.compare thead th:first-child{
+    background:var(--ink);
+    min-width:150px;
+    z-index:3;
+  }
+  th.phone-col{min-width:190px;}
+  .th-index{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;letter-spacing:.1em;color:var(--amber);
+    margin-bottom:6px;
+  }
+  .th-name{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:700;font-size:20px;line-height:1.05;margin-bottom:4px;
+  }
+  .th-variant{font-size:11.5px;color:#C7CBBC;font-weight:400;}
+  .th-price{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:20px;color:#F2C879;margin-top:10px;font-weight:600;
+  }
+  .th-pos{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10px;color:#9FA69A;margin-top:4px;
+  }
+
+  table.compare tbody th.row-label{
+    background:var(--panel);
+    position:sticky;left:0;
+    text-align:left;
+    padding:16px 20px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--amber-deep);
+    border-right:1.5px solid var(--rule);
+    border-bottom:1.5px solid var(--rule);
+    vertical-align:top;
+    white-space:nowrap;
+    z-index:2;
+  }
+  table.compare tbody td{
+    padding:16px 20px;
+    border-right:1px solid var(--rule);
+    border-bottom:1.5px solid var(--rule);
+    vertical-align:top;
+    font-size:13.5px;
+    line-height:1.5;
+    background:var(--panel);
+  }
+  table.compare tbody tr:nth-child(even) td,
+  table.compare tbody tr:nth-child(even) th.row-label{
+    background:#F2F2EA;
+  }
+  table.compare td small, table.compare td .sub{
+    display:block;color:var(--ink-soft);font-size:12px;margin-top:3px;
+  }
+  td.best{ background:var(--win) !important; box-shadow: inset 0 0 0 2px var(--teal); }
+  td.best::before{
+    content:"BEST HERE";
+    display:block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:9.5px;letter-spacing:.08em;
+    color:var(--teal-deep);
+    margin-bottom:4px;
+  }
+
+  .tag-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+  .tag{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;
+    background:var(--tag-bg);color:var(--tag-ink);padding:3px 7px;
+  }
+  .tag.warn{background:var(--danger);}
+
+  .scroll-hint{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft);
+    margin:0 0 40px;
+  }
+
+  /* ---------- LEGEND ---------- */
+  .legend{
+    display:flex;gap:22px;flex-wrap:wrap;
+    padding:0 0 40px;
+    font-size:12.5px;color:var(--ink-soft);
+    align-items:center;
+  }
+  .legend .swatch{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:middle;}
+  .swatch.win{background:var(--win);box-shadow:inset 0 0 0 2px var(--teal);}
+  .swatch.tag{background:var(--tag-bg);}
+  .swatch.warn{background:var(--danger);}
+
+  /* ---------- FOOTNOTE ---------- */
+  section.footnote{padding:0 0 60px;}
+  .footnote-box{
+    border:1.5px dashed var(--rule);padding:22px 26px;
+    font-size:13.5px;line-height:1.6;color:var(--ink-soft);
+  }
+  .footnote-box strong{color:var(--ink);}
+  .footnote-box h3{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--ink);margin:0 0 12px;
+  }
+  footer{
+    border-top:2px solid var(--ink);padding:22px 0 40px;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+  ::selection{background:var(--amber);color:var(--ink);}
+
+  @media(max-width:700px){
+    h1.title{font-size:44px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">India · Retail listings · 10–12 July 2026</div>
+    <h1 class="title">Phones between<br><span class="num">₹30K</span> — <span class="num">₹36K</span></h1>
+    <p class="dek">Five phones whose current listed price actually falls inside this exact band, laid out side by side so every spec lines up in one row you can scan straight across.</p>
+  </header>
+
+  <div class="intro-note">
+    <span class="chip">5 phones · one table</span>
+    <span class="chip">scroll right on mobile →</span>
+    <span class="chip">shaded cell = best-in-class for that row</span>
+  </div>
+
+  <div class="table-scroll">
+    <table class="compare" id="compareTable"></table>
+  </div>
+  <p class="scroll-hint">↔ table scrolls horizontally — phone name column stays pinned on the left.</p>
+
+  <div class="legend">
+    <span><span class="swatch win"></span>Best-in-class for that spec</span>
+    <span><span class="swatch tag"></span>Notable feature</span>
+    <span><span class="swatch warn"></span>Trade-off / thing to check before buying</span>
+  </div>
+
+  <section class="footnote">
+    <div class="footnote-box">
+      <h3>Left out of this band</h3>
+      <p><strong>Xiaomi Redmi Turbo 5</strong> currently lists from ₹35,999–37,999 depending on retailer/day — close, but sits at or past the top edge. Worth a look if your budget can stretch a little. <strong>Samsung Galaxy A57 5G</strong> (from ₹53,999+) and top-tier variants like the vivo T5 Pro 12GB (₹39,999) are priced well above this band and excluded outright.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>Compiled from 91mobiles, Smartprix, Cashify, Beebom, Fonearena &amp; brand listings.</span>
+    <span>Prices move with bank offers &amp; exchange bonuses — treat as reference, confirm live price before buying.</span>
+  </footer>
+</div>
+
+<script>
+const LOW = 30000, HIGH = 36000;
+
+const PHONES = [
+  {
+    name: "Motorola Edge 70 Fusion",
+    variant: "12GB / 256GB",
+    price: 32999,
+    display: "6.78&quot; Quad-curved AMOLED, 144Hz, 1.5K",
+    displaySub: "Gorilla Glass 7i · 5200 nits peak",
+    chip: "Snapdragon 7s Gen 4",
+    chipSub: "4nm",
+    camera: "50MP (Sony LYT-710, OIS) + 13MP ultra-wide/macro",
+    cameraSub: "32MP front",
+    battery: "7000 mAh silicon-carbon",
+    batterySub: "68W wired TurboPower",
+    os: "Android 16 · Hello UI",
+    durability: "IP68 + IP69, MIL-STD-810H",
+    durabilitySub: "Toughest build in this line-up",
+    notesP: "Best-in-class brightness and battery life for the price. moto ai suite (Playlist/Image Studio, Catch Me Up) is genuinely useful. Gaming is only mid-pack for a 7s-series chip.",
+    tags: [
+      {t:"Wi-Fi drop reports", warn:true},
+      {t:"Occasional freeze/restart", warn:true},
+    ],
+    best:{display:true, durability:true}
+  },
+  {
+    name: "Nothing Phone (4b)",
+    variant: "8GB / 128GB",
+    price: 34999,
+    display: "6.77&quot; FHD+ AMOLED, 120Hz",
+    displaySub: "2000 nits peak · anti-burn-in pixel shift",
+    chip: "Snapdragon 6 Gen 4",
+    chipSub: "4nm",
+    camera: "50MP (Samsung, OIS) + 8MP ultra-wide",
+    cameraSub: "16MP front",
+    battery: "6000 mAh (India-specific)",
+    batterySub: "33W wired · 50% in ~27 min",
+    os: "Nothing OS 4.1 · Android 16",
+    osSub: "3 major OS updates + 6yr security",
+    durability: "IP64 rating",
+    durabilitySub: "Weakest water/dust rating here",
+    notesP: "Distinctive transparent design with an upgraded 45-LED Glyph Bar (Live Updates for Uber, Maps, Zomato). Strongest software runway in this comparison.",
+    tags: [
+      {t:"Launched 7 Jul 2026", warn:false},
+      {t:"No long-term data yet", warn:true},
+    ],
+    best:{os:true}
+  },
+  {
+    name: "Samsung Galaxy A56 5G",
+    variant: "8GB / 256GB",
+    price: 35999,
+    display: "6.7&quot; FHD+ Super AMOLED, 120Hz",
+    displaySub: "1200 nits · Gorilla Glass Victus+",
+    chip: "Exynos 1580",
+    chipSub: "4nm",
+    camera: "50MP OIS + 12MP ultra-wide + 5MP macro",
+    cameraSub: "12MP front",
+    battery: "5000 mAh",
+    batterySub: "45W wired",
+    os: "Android 15 · One UI 7",
+    osSub: "6 gens OS + 6yr security — longest here",
+    durability: "IP67, metal frame + Victus+",
+    notesP: "The software promise is the standout: 6 generations of OS upgrades — best long-term bet if you keep phones 4+ years. Smallest battery and slowest charging in this group.",
+    tags: [
+      {t:"6yr OS + security", warn:false},
+      {t:"Smallest battery here", warn:true},
+      {t:"Mixed perf. feedback", warn:true},
+    ],
+    best:{camera:true, os:true}
+  },
+  {
+    name: "vivo T5 Pro",
+    variant: "8GB / 256GB",
+    price: 33999,
+    display: "6.83&quot; 1.5K AMOLED, 144Hz",
+    displaySub: "up to 5000 nits · 2160Hz PWM dimming",
+    chip: "Snapdragon 7s Gen 4",
+    chipSub: "4nm",
+    camera: "50MP Sony IMX882 (OIS) + 2MP depth",
+    cameraSub: "32MP front — no ultra-wide",
+    battery: "9020 mAh — largest here",
+    batterySub: "90W wired · 50% in ~37 min",
+    os: "Android 16 · OriginOS 6",
+    osSub: "3yr OS updates, 5yr security",
+    durability: "IP68 + IP69, 7K vapour cooling",
+    durabilitySub: "8.25mm thin · 5yr battery health promise",
+    notesP: "Segment-leading battery in a genuinely thin body. Trade-off: no ultra-wide lens, a step down in versatility from the previous T4 Pro. First OriginOS 6 phone from vivo in India.",
+    tags: [
+      {t:"Biggest battery", warn:false},
+      {t:"No ultra-wide lens", warn:true},
+      {t:"New OS in India", warn:true},
+    ],
+    best:{battery:true, price:true}
+  },
+  {
+    name: "OnePlus Nord CE 5 5G",
+    variant: "8GB / 128GB",
+    price: 34890,
+    display: "6.77&quot; AMOLED, 120Hz",
+    displaySub: "HDR10+, Dolby Vision, 10-bit colour",
+    chip: "MediaTek Dimensity 8350 Apex",
+    chipSub: "—",
+    camera: "50MP OIS + 8MP ultra-wide",
+    cameraSub: "16MP front",
+    battery: "7100 mAh",
+    batterySub: "80W SuperVOOC · 0–100% in ~90 min",
+    os: "Android 15 · OxygenOS",
+    durability: "IP65, expandable storage",
+    durabilitySub: "Only phone here with microSD (up to 1TB)",
+    notesP: "Big battery paired with genuinely fast 80W charging is the standout combo. Notable cut: single mono speaker, no stereo pair. Price has swung noticeably month to month.",
+    tags: [
+      {t:"Fastest charging", warn:false},
+      {t:"microSD up to 1TB", warn:false},
+      {t:"Mono speaker only", warn:true},
+      {t:"Price volatility", warn:true},
+    ],
+    best:{charging:true}
+  },
+];
+
+function fmtPrice(n){ return "₹" + n.toLocaleString("en-IN"); }
+function pct(price){ return Math.round(((price - LOW) / (HIGH - LOW)) * 100); }
+
+const rows = [
+  {key:"display", label:"Display"},
+  {key:"chip", label:"Processor"},
+  {key:"camera", label:"Camera"},
+  {key:"battery", label:"Battery"},
+  {key:"charging", label:"Charging", virtual:true},
+  {key:"os", label:"Software"},
+  {key:"durability", label:"Build"},
+  {key:"notes", label:"Notes", virtual:true},
+];
+
+const table = document.getElementById("compareTable");
+
+// THEAD
+const thead = document.createElement("thead");
+const trHead = document.createElement("tr");
+trHead.innerHTML = `<th></th>`;
+PHONES.forEach((p, i) => {
+  const idx = String(i+1).padStart(2,"0");
+  trHead.innerHTML += `
+    <th class="phone-col">
+      <div class="th-index">${idx} / 05</div>
+      <div class="th-name">${p.name}</div>
+      <div class="th-variant">${p.variant}</div>
+      <div class="th-price">${fmtPrice(p.price)}</div>
+      <div class="th-pos">${pct(p.price)}% up the ₹30–36K band</div>
+    </th>`;
+});
+thead.appendChild(trHead);
+table.appendChild(thead);
+
+// TBODY
+const tbody = document.createElement("tbody");
+
+function cellContent(p, key){
+  if(key === "charging"){
+    return `${p.batterySub}`;
+  }
+  if(key === "notes"){
+    return `${p.notesP}<div class="tag-row">${p.tags.map(t=>`<span class="tag ${t.warn?'warn':''}">${t.t}</span>`).join("")}</div>`;
+  }
+  const sub = p[key+"Sub"] ? `<small>${p[key+"Sub"]}</small>` : "";
+  return `${p[key]}${sub}`;
+}
+
+rows.forEach(row => {
+  const tr = document.createElement("tr");
+  const th = document.createElement("th");
+  th.className = "row-label";
+  th.textContent = row.label;
+  tr.appendChild(th);
+
+  PHONES.forEach(p => {
+    const td = document.createElement("td");
+    const isBest = p.best && p.best[row.key];
+    if(isBest) td.className = "best";
+    td.innerHTML = cellContent(p, row.key);
+    tr.appendChild(td);
+  });
+  tbody.appendChild(tr);
+});
+
+// price row (with best tag for lowest)
+const trPrice = document.createElement("tr");
+const thPrice = document.createElement("th");
+thPrice.className = "row-label";
+thPrice.textContent = "Listed price";
+trPrice.appendChild(thPrice);
+const minPrice = Math.min(...PHONES.map(p=>p.price));
+PHONES.forEach(p => {
+  const td = document.createElement("td");
+  if(p.price === minPrice) td.className = "best";
+  td.innerHTML = `${fmtPrice(p.price)}<small>${pct(p.price)}% up the band</small>`;
+  trPrice.appendChild(td);
+});
+tbody.insertBefore(trPrice, tbody.firstChild);
+
+table.appendChild(tbody);
+</script>
+
+</body>
+</html>
